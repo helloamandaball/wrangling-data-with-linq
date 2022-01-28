@@ -1,0 +1,15 @@
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\linq.exe
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\linq.deps.json
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\linq.runtimeconfig.json
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\linq.dll
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\ref\linq.dll
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\bin\Debug\net6.0\linq.pdb
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.csproj.AssemblyReference.cache
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.AssemblyInfoInputs.cache
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.AssemblyInfo.cs
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.csproj.CoreCompileInputs.cache
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.dll
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\ref\linq.dll
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.pdb
+C:\Users\hello\workspace\backend\book-1\chapter16\linq\obj\Debug\net6.0\linq.genruntimeconfig.cache
