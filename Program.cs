@@ -33,16 +33,21 @@ namespace linq
         public string Bank { get; set; }
     }
 
+    public class MilliList
+    {
+        public string Bank { get; set; }
+        public int TotalMilliPerBank { get; set; }
+    }
+
     public class ReportItem
-                {
-                    public string CustomerName { get; set; }
-                    public string BankName { get; set; }
-                }
-            
+    {
+        public string CustomerName { get; set; }
+        public string BankName { get; set; }
+    }
 
     public class Program
     {
-        public static void Main() 
+        public static void Main()
         {
             // Create some banks and store in a List
             List<Bank> banks = new List<Bank>() {
@@ -65,26 +70,44 @@ namespace linq
                 new Customer(){ Name="Sid Brown", Balance=49582.68, Bank="CITI"}
             };
 
-            
-                // You will need to use the `Where()`
-                // and `Select()` methods to generate
-                // instances of the following class.
+            List<Customer> millionaires = customers.Where(c => c.Balance > 999999.99).ToList();
 
-                
-            ///customer.name (customer.bank = bank.symbol), then bank.name render customer.name and bank.name
+            // foreach (Customer milliObj in millionaires)
+            // {
+            //     Console.WriteLine($"These are millionaires: {milliObj.Name}");
+            // }
 
-            List<ReportItem> millionaireReport = customers.Join(
-                banks,
-                customer => customer,
-                bank => bank.Name,
-                (customer, bank) =>
-                new { CustomerName = customer.Name, BankName = bank.Name}
-            );
-            
-            // IEnumerable<int> bank = from bankName in Bank
-            //         where Bank.Symbol == Customer.Bank
-            //         select bankName;
+            List<MilliList> milliByBank = (from customer in millionaires
+                                           group customer by customer.Bank into bankGroup
+                                           select new MilliList
+                                           {
+                                               Bank = bankGroup.Key,
+                                               TotalMilliPerBank = bankGroup.Count()
+                                           }).ToList();
+            Console.WriteLine(milliByBank);
 
+            // milliByBank.ForEach(x => Console.WriteLine($"{x.Bank} {x.TotalMilliPerBank}"));
+
+            /*
+                You will need to use the `Where()` and `Select()` methods to generate instances of the following class.
+
+                Note: skipped the Where because we already did that part when we created the millionaires above. Commented out what the code would be if we hadn't done t hat in millionaires first. See Line 104 & 105.
+
+                Note: moved this class to above Main public class ReportItem
+                {
+                    public string CustomerName { get; set; }
+                    public string BankName { get; set; }
+                }
+            */
+
+            //get customer.name then find customer.bank and match it to bank.symbol, then display bank.name, then sort customer.name ascending by last name (is this a .Skip? or is that what .Select is for?)
+
+            List<ReportItem> millionaireReport = (from customer in millionaires
+                                                  // from customer in customers
+                                                  // where customer.Balance >= 1000000
+                                                  join bank in banks on customer.Bank equals bank.Symbol
+                                                  select new ReportItem { CustomerName = customer.Name, BankName = bank.Name }
+                                                ).ToList();
 
             foreach (var item in millionaireReport)
             {
