@@ -101,8 +101,6 @@ namespace linq
                 }
             */
 
-            //get customer.name then find customer.bank and match it to bank.symbol, then display bank.name, then sort customer.name ascending by last name (is this a .Skip? or is that what .Select is for?)
-
             List<ReportItem> millionaireReport = (from customer in millionaires
                                                   // from customer in customers
                                                   // where customer.Balance >= 1000000
